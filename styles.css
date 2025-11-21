@@ -1,0 +1,55 @@
+/* Simple responsive styles for MedSynk.health */
+:root{
+  --max-width:1100px;
+  --accent:#1b6fb3;
+  --muted:#666;
+  --bg:#f9fbfe;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;color:#111;background:var(--bg);line-height:1.5}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-header{background:white;box-shadow:0 1px 2px rgba(0,0,0,0.04);position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:0.5rem;text-decoration:none;color:inherit}
+.logo img{height:38px}
+.main-nav{display:flex;gap:1rem;align-items:center}
+.main-nav a{color:var(--muted);text-decoration:none;padding:0.5rem}
+.main-nav a.cta{background:var(--accent);color:white;padding:0.5rem 0.8rem;border-radius:4px}
+.nav-toggle{display:none;background:none;border:0;font-size:1.25rem;padding:0.25rem}
+
+/* Hero */
+.hero{padding:3rem 0;background:linear-gradient(180deg,white, #f2f8ff);text-align:center}
+.hero h1{margin:0 0 0.5rem;font-size:1.6rem}
+.hero p{margin:0.25rem 0 1rem;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:white;padding:0.6rem 1rem;border-radius:6px;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+
+/* two columns */
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:2rem 0}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem 0}
+.features article{background:white;padding:1rem;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04);text-align:center}
+.features img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+
+/* content */
+main h1, main h2{color:#0b3a63}
+.proposal{background:white;padding:1rem;border-radius:8px;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+
+/* footer */
+.site-footer{background:#0b2b45;color:white;padding:1.25rem 0;margin-top:2rem}
+.site-footer a{color:white}
+
+/* forms */
+form{background:white;padding:1rem;border-radius:8px;max-width:720px}
+label{display:block;margin-top:0.75rem;color:var(--muted)}
+input,textarea{width:100%;padding:0.6rem;margin-top:0.25rem;border:1px solid #ddd;border-radius:6px}
+
+/* responsive */
+@media(max-width:900px){
+  .two-cols{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .nav-toggle{display:inline-block}
+  .main-nav{position:absolute;right:1rem;top:68px;background:white;flex-direction:column;padding:0.5rem;border-radius:6px;display:none;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+  .main-nav.show{display:flex}
+}
